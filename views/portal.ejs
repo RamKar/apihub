@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rapids APIHub</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-aria.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-animate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+  
+  <script type="text/javascript" src="https://rawgit.com/RamKar/apihub/master/script.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/RamKar/apihub/master/list.js"></script>
+  <script>function createProject(){
+    document.getElementsByName("owner")[0].value = sessionStorage.owner;
+    document.getElementsByName("role")[0].value = sessionStorage.role;
+    document.getElementsByName("emailId")[0].value = sessionStorage.emailId;
+    var info={
+        owner: document.getElementsByName("owner")[0].value,
+        role : document.getElementsByName("role")[0].value,
+        email : document.getElementsByName("emailId")[0].value,
+        visibility : document.getElementsByName("visibility")[0].value,
+        state : document.getElementsByName("state")[0].value,
+        name : document.getElementsByName("name")[0].value
+    }
+    newproject(info);
+    }
+  </script>
+  <style>
+  
+  .affix {
+      top: 20px;
+  }
+  </style>
+</head>
+<body ng-controller="testController">
+<div class="container-fluid" style="background-color:#21A6F3;color:#fff;height:100px;">
+  <h1>Rapids SwaggerHub UI</h1>
+</div>
+<br>
+<div class="col-md-8 col-md-offset-2">
+  <p class="lead">You have logged into Rapids API hub <strong><%= user.local.firstName %></strong> !!</p>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <form action="" class="search-form">
+        <div class="form-group has-feedback">
+          <label for="search" class="sr-only">Search for API's</label>
+          <input type="text" class="form-control" name="search" id="search" placeholder="search for API's">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+</div>
+<nav class="col-md-2">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="20">
+        <li><a href="#"><div ng-app="test">
+  <div layout="column" layout-align="center center" layout-fill="layout-fill">
+    <md-button class="md-primary md-raised" ng-click="showDialog($event)">New Project</md-button>
+  </div>
+  <script type="text/ng-template" id="portal.ejs">
+    <md-dialog class="screen-dialog">
+      <md-dialog-actions>
+        <md-button class="md-raised" ng-click="closeDialog();createProject();">
+          <md-icon class="fa fa-times fa-2x"></md-icon>
+        </md-button>
+      </md-dialog-actions>
+      <md-dialog-content>
+        <form name="New Project"></form>
+        <div layout="layout" layout-sm="column">
+          <md-input-container style="width:40%"></md-input-container>
+        </div>
+        <div layout="layout" layout-sm="column"></div>
+        <md-input-container flex="flex">
+          <label>Name of the project</label>
+          <input type="text" name="name"/>
+        </md-input-container>
+        <md-input-container flex="flex">
+          <label>Owner</label>
+          <input type="text" name="owner"/>
+        </md-input-container>
+        <md-input-container flex="flex">
+          <label>Role</label>
+          <input type="text" name="role"/>
+        </md-input-container>
+        <md-input-container flex="flex">
+          <label>Email</label>
+          <input type="email" name="emailId"/>
+        </md-input-container>
+        <md-input-container flex="flex">
+          <label>State</label>
+          <input type="text" name="state"/>
+        </md-input-container>
+        <md-input-container flex="flex">
+          <label>visibility</label>
+          <input type="text" name="visibility"/>
+        </md-input-container>
+      </md-dialog-content>
+    </md-dialog>
+  </script>
+</div></a></li>
+        <li><a href ="/admin">Admin</a></li>
+        <li><a href="#Archive">Archive</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="200">
+         <li><a href="/logout" button type="submit" class="btn btn-primary">Logout</button></a></li>
+        </ul>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+
+</body>
+</html>
