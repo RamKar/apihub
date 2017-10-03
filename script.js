@@ -20,7 +20,7 @@
               }
             });
           },
-          templateUrl: "dialogContent.tmpl.html",
+          templateUrl: "/views/portal",
           targetEvent: evt
         });
       });
