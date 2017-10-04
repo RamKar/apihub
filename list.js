@@ -1,4 +1,4 @@
-var Project            = require('https://rawgit.com/RamKar/apihub/master/models/project.js');
+var Project            = require('https://rawgit.com/RamKar/apihub/master/models/project');
 
 var User            = require('./models/user');
 
