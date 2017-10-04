@@ -1,6 +1,10 @@
 // app/models/user.js
 // load the things we need
-var mongoose = require('mongoose');
+var mongoose = 'mongoose';
+require([mongoose], function(result){
+    mongoose = result;
+});
+
 var d =new Date();
 // define the schema for our user model
 var projectSchema = mongoose.Schema({
