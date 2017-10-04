@@ -1,6 +1,6 @@
-var Project            = require(['./models/project']);
+var Project            = require('/models/project');
 
-var User            = require('./models/user');
+var User            = require('/models/user');
 
 
 module.exports.getuser = function(email) {
