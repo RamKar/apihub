@@ -1,4 +1,4 @@
-var Project            = require('./models/project');
+var Project            = require(['./models/project']);
 
 var User            = require('./models/user');
 
