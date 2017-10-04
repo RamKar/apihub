@@ -21,6 +21,7 @@ app
             });
           },
           templateUrl: "dialogContent.tmpl.html",
+          clickOutsideToClose:true,
           targetEvent: evt
         });
       });
