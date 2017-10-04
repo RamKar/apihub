@@ -1,8 +1,16 @@
-var Project            = require('/models/project');
+// var Project            = require('/models/project');
 
-var User            = require('/models/user');
+// var User            = require('/models/user');
 
-
+var Project = './models/project';
+var User = './models/user';
+// ES5
+require([Project], function(result){
+    Project = result;
+});
+require([User], function(result1){
+    User = result1;
+});
 module.exports.getuser = function(email) {
         
         //import user info
