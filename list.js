@@ -2,8 +2,8 @@
 
 // var User            = require('/models/user');
 
-var Project = './models/project';
-var User = './models/user';
+var Project = 'https://rawgit.com/RamKar/apihub/master/models/project.js';
+var User = 'https://rawgit.com/RamKar/apihub/master/models/user.js';
 // ES5
 require([Project], function(result){
     Project = result;
